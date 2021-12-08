@@ -1,13 +1,12 @@
 import React from "react";
-import getWeb3 from "../getWeb3";
 
 const TestButton = (props) => {
   const { contracts, accounts } = props;
 
   const activateToken = async () => {
     const contract = contracts.httToken;
-    const tokenName = await contract.methods;
-    console.log(tokenName);
+    const tokenSymbol = await contract.methods.symbol();
+    console.log(tokenSymbol);
   };
 
   const activateSimpleStorage = async () => {
