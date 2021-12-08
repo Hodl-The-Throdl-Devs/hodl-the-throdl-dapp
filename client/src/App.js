@@ -6,7 +6,7 @@ import TestButton from "./components/TestButton";
 import "./App.css";
 
 class App extends Component {
-  state = { storageValue: 0, web3: null, accounts: null, contract: null };
+  state = { storageValue: 0, web3: null, accounts: null, contracts: null };
 
   componentDidMount = async () => {
     try {
@@ -26,7 +26,7 @@ class App extends Component {
 
       // Set web3, accounts, and contract to the state, and then proceed with an
       // example of interacting with the contract's methods.
-      this.setState({ web3, accounts, contract: instance }, this.runExample);
+      this.setState({ web3, accounts, contracts: instance }, this.runExample);
     } catch (error) {
       // Catch any errors for any of the above operations.
       alert(
@@ -36,18 +36,18 @@ class App extends Component {
     }
   };
 
-  runExample = async () => {
-    const { accounts, contract } = this.state;
+  // runExample = async () => {
+  //   const { accounts, contracts } = this.state;
 
-    // Stores a given value, 5 by default.
-    await contract.methods.set(5).send({ from: accounts[0] });
+  //   // Stores a given value, 5 by default.
+  //   await contracts.methods.set(5).send({ from: accounts[0] });
 
-    // Get the value from the contract to prove it worked.
-    const response = await contract.methods.get().call();
+  //   // Get the value from the contract to prove it worked.
+  //   const response = await contracts.methods.get().call();
 
-    // Update state with the result.
-    this.setState({ storageValue: response });
-  };
+  //   // Update state with the result.
+  //   this.setState({ storageValue: response });
+  // };
 
   render() {
     if (!this.state.web3) {
@@ -66,7 +66,7 @@ class App extends Component {
           Try changing the value stored on <strong>line 42</strong> of App.js.
         </p>
         <div>The stored value is: {this.state.storageValue}</div>
-        <TestButton />
+        <TestButton contracts={this.state.contracts} accounts={this.state.accounts} />
       </div>
     );
   }
