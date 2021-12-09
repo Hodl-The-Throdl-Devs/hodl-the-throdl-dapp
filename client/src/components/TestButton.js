@@ -5,7 +5,7 @@ const TestButton = (props) => {
 
   const activateToken = async () => {
     const contract = contracts.httToken;
-    const tokenSymbol = await contract.methods.symbol();
+    const tokenSymbol = await contract.methods.symbol().call();
     console.log(tokenSymbol);
   };
 
