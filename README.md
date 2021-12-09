@@ -18,3 +18,7 @@ Adding HTT Token to Metamask Wallet:
 - After migrating contracts to ganache, go to Ganache GUI's Transactions page
 - Find transaction that has event name 'Encoded Event' & Contract 'HTTToken'. Proceed to click event
 - Copy the contract address and paste to Metamark Wallet via Import Token
+
+General Troubleshooting & Resources:
+
+- In the case where you're testing simpleStorage and recieve error in console -> https://tinyurl.com/3rpcpymx
