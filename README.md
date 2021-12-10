@@ -22,3 +22,10 @@ Adding HTT Token to Metamask Wallet:
 General Troubleshooting & Resources:
 
 - In the case where you're testing simpleStorage and recieve error in console -> https://tinyurl.com/3rpcpymx
+
+
+SIDE NOTES: CONTRACT
+- Choice between ETH and HTT (Working with Eth First)
+What we want it to do:
+1) Exchanging token for ETH (Ex. 1 token === 0.00001 ETH)
+2) Transfer ETH from 'Bank' address to user address
